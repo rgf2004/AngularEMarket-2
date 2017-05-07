@@ -1,0 +1,37 @@
+<div class="inner-container">  
+    <div class="row" style="margin:10px;">
+        <h2> {{ selectCategory.name }}</h2>
+    </div>
+    <div class="row">
+        <nav class="navbar">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">            
+                <ul class="nav navbar-nav navbar-left">        
+                    <li class="dropdown" appDropdown>
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort By<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a (click)="sortColumn = 'title'">Title</a></li>
+                        <li><a (click)="sortColumn = 'price'">Price</a></li>            
+                        <li><a (click)="sortColumn = ''">Reset Sorting</a></li> 
+                    </ul>
+                    </li>
+                </ul>
+                <div class="navbar-form navbar-right">
+                <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search By Product Title" (input)="onSearchChange($event.target.value)">
+                </div>
+            </div>
+            </div>        
+        </nav>
+    </div>
+    <div id="products" class="row list-group">
+        <app-item-thumbnail *ngFor="let item of pagedItems | orderBy: sortColumn" [item]="item"></app-item-thumbnail>
+    </div>  
+    
+    <!-- pager -->
+    <ul *ngIf="pager.pages && pager.pages.length" class="pagination">        
+        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a (click)="setPage(page)">{{page}}</a>
+        </li>        
+    </ul>    
+
+</div>

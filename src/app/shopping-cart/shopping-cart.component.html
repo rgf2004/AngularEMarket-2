@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row" style="padding-top:30px;">
+      <div class="col-xs-12">
+        <div class="list-group">
+          <app-shopping-cart-item *ngFor="let shoppingCartItem of shoppingCartItems " [shoppingCartItem]="shoppingCartItem" ></app-shopping-cart-item>
+        </div>  
+      </div>
+  </div>
+  <div class = "row">
+      <div class="pull-center">
+          <h3><strong>Total : {{totalAmount}} $ </strong></h3>
+      </div>
+  </div>
+</div>

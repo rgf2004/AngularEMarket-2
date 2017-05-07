@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-xs-2">
+      <img class="group list-group-image image-responsive" [src]="shoppingCartItem.item.imageUrl" [alt]="shoppingCartItem.item.title" style="max-height:60px;"/>
+    </div>
+    <div class="col-xs-7">
+      <h4 class="list-group-item-heading">{{ shoppingCartItem.item.title }}</h4>
+    </div>
+    <div class="col-xs-2">
+      <h4 class="list-group-item-heading">{{ shoppingCartItem.item.price }} $</h4>
+    </div>
+    <div class="col-xs-1">
+        <h4 class="list-group-item-heading">{{ shoppingCartItem.quantity }} </h4>
+        <!-- TODO add its implementation to change the quantity -->
+        <!-- <input type="number" class="form-control" [(ngModel)]="shoppingCartItem.quantity">   -->
+    </div>
+    <!-- TODO add its implementation to remove an item -->
+    <!--
+    <div class="col-xs-2">
+        <button type="button" class="btn btn-danger" (click)="onDeleteIngredient(i)">X</button>
+    </div>
+    -->
+</div>
+<hr>

@@ -1,0 +1,30 @@
+<div class="inner-container">  
+    
+    <div class="row" style="margin:10px;">
+        <div class="col-xs-6">
+          <div class="row" style="padding-top:50px;">
+            <h2><strong> {{ item.title}} </strong></h2>
+          </div>
+          <div class="row" style="padding-top:50px;">
+            <h3> <strong>Price</strong> {{ item.price}} $ </h3>
+            <h5> Expect Delivery in <strong> {{ item.daysToDeliver }} </strong> Days</h5>
+          </div>
+          <div class="row" style="padding-top:20px;">
+            <a class="btn btn-primary" (click)="addToCart()">Add to cart</a>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <img [src]= "item.imageUrl" 
+                [alt]="item.title" 
+                class="img-responsive"
+                style="max-height: 400px;max-width:300;">
+        </div>
+    </div>    
+    <div class="row">
+      <hr>
+    </div>
+
+    <div class="row">
+        <p>{{ item.description }}</p>
+    </div>    
+</div>
